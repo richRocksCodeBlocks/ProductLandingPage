@@ -1,0 +1,377 @@
+/* Page Defaults */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+article, aside, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sriracha', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: square;
+    font-family: 'Roboto', sans-serif;
+}
+
+.video {
+    grid-area: video;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0px;
+    background-color: black;
+    text-align: center;
+}
+
+.video iframe,
+.video object,
+.video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.vip {
+    display: flex;
+}
+
+/* Add margin to main so that it is not hidden my the navbar on any screen size */
+main {
+    margin-top: 94px;
+}
+
+/* Responsive Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: hsl(0, 0%, 0%);
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: auto;
+    margin: 16px 16px 16px 16px;
+
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-top: 37px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 37px;
+    text-decoration: none;
+    font-size: 17px;
+    align-self: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: relative;
+
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: center;
+        padding: 16px 16px;
+    }
+
+    .logo {
+        position: static;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* Main Body & Footer - Small Screens */
+@media screen and (max-width: 600px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto 250px auto;
+        grid-template-areas: "title" "image" "description" "features" "price" "vip" "video";
+
+    }
+
+    .title {
+        grid-area: title;
+        background-color: ghostwhite;
+        padding: 5px 5px;
+    }
+
+    h1.product-title {
+        font-size: 1.5em;
+        text-align: center;
+        text-shadow: 1px 1px lightgrey;
+    }
+
+    .image {
+        grid-area: image;
+        text-align: center;
+    }
+
+    .description {
+        grid-area: description;
+        text-align: justify;
+        padding: 10px;
+    }
+
+    .features {
+        grid-area: features;
+        padding: 10px;
+    }
+
+    .features h2 {
+        text-align: center;
+    }
+
+    .price {
+        grid-area: price;
+        text-align: center;
+    }
+    .price p {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    .price p small {
+        color: #969696;
+        font-size: .5em;
+    }
+    .price button[type=button] {
+        background-color: #fb0d1b;
+        border: 2px dotted white;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: crosshair;
+        font-size: 1em;
+    }
+
+    .vip {
+        grid-area: vip;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 250px;
+        background-image: url("../img/background-2.jpg");
+        background-size: cover;
+        text-align: center;
+    }
+
+    .vip em {
+        color: white;
+        font-family: 'Sriracha', cursive;
+        font-size: larger;
+    }
+
+    .vip input[type=email] {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .vip input[type=submit] {
+        background-color: #fb0d1b;
+        border: 2px dotted white;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: crosshair;
+    }
+
+    footer {
+        background-color: black;
+        color: white;
+        font-size: .7em;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+
+    }
+
+
+
+}
+
+/* Main Body & Footer - Large Screens */
+@media screen and (min-width: 601px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 200px) 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+                "title title title title title title"
+                "image image image description description description"
+                "image image image features features features"
+                "image image image price price price"
+                "vip vip vip video video video";
+
+    }
+    .title {
+        grid-area: title;
+        background-color: ghostwhite;
+        padding: 5px 5px;
+    }
+
+    h1.product-title {
+        font-size: 1.5em;
+        text-align: center;
+        text-shadow: 1px 1px lightgrey;
+    }
+
+    .image {
+        grid-area: image;
+        text-align: center;
+    }
+
+    .description {
+        grid-area: description;
+        text-align: justify;
+        padding: 10px;
+    }
+
+    .features {
+        grid-area: features;
+        padding: 10px;
+    }
+
+    .features h2 {
+        text-align: center;
+    }
+
+    .price {
+        grid-area: price;
+        text-align: center;
+    }
+    .price p {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    .price p small {
+        color: #969696;
+        font-size: .5em;
+    }
+    .price button[type=button] {
+        background-color: #fb0d1b;
+        border: 2px dotted white;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: crosshair;
+        font-size: 1em;
+    }
+
+    .vip {
+        grid-area: vip;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        background-image: url("../img/background-2.jpg");
+        background-size: cover;
+        text-align: center;
+    }
+
+    .vip em {
+        color: white;
+        font-family: 'Sriracha', cursive;
+        font-size: xx-large;
+    }
+
+    .vip input[type=email] {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    .vip input[type=submit] {
+        background-color: #fb0d1b;
+        border: 2px dotted white;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: crosshair;
+    }
+
+    footer {
+        background-color: black;
+        color: white;
+        font-size: .7em;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+
+    }
+}

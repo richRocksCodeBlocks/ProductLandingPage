@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Sriracha" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+<header id="header">
+    <nav id="nav-bar">
+        <div class="topnav" id="myTopnav">
+
+            <img id="header-img" class="logo" src="assets/img/logo_music.jpg"/>
+
+            <a href="#header" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#video" class="nav-link">Demo</a>
+            <a href="#about" class="nav-link">VIP</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+</header>
+<main role="main" id="about">
+    <div class="title">
+        <h1 class="product-title">60th Anniversary Fender 58 Jazzmaster</h1>
+    </div>
+    <div class="image">
+        <div class="product-images">
+            <img class="img-responsive" src="assets/img/jazz-master.jpg"/>
+            <!--
+            This image is Copyrighted by Fender Musical Corporation
+            and is being used under the Fair Use Doctoring For Non-commercial
+            Educational use. The original source of this material is
+            https://shop.fender.com/en-US/electric-guitars/jazzmaster/limited-edition-60th-anniversary-58-jazzmaster/0173800703.html
+            -->
+        </div>
+    </div>
+    <div class="description">
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut interdum erat, dignissim dignissim lacus.
+            Donec aliquet massa ut iaculis porttitor. Quisque rhoncus lorem ac nisl mollis, cursus ornare lacus aliquam.
+            Vivamus venenatis, diam vel placerat rhoncus, magna nibh pharetra lorem, sed posuere elit nisl vitae felis.
+            Aenean vel porttitor.</p>
+    </div>
+    <div class="features">
+        <h2>Features</h2>
+        <hr>
+        <ul>
+            <li>Morbi sed eros aliquet, varius nulla vitae, auctor ex.</li>
+            <li>Proin commodo leo sed consectetur rutrum.</li>
+            <li>Curabitur scelerisque leo facilisis accumsan cursus.</li>
+            <li>Integer ultricies odio in massa semper dictum.</li>
+            <li>Vivamus euismod nisi quis egestas vestibulum.</li>
+        </ul>
+    </div>
+    <div class="price">
+        <hr>
+        <p>
+            <b>Price: $2,299.99</b>
+            <br>
+            <small>+ Tax, Shipping & Handling</small>
+        </p>
+        <button type="button">Add to Cart</button>
+        <hr>
+    </div>
+    <div class="vip">
+        <div><em>Join Our Mailing List For VIP Only Promotions</em></div>
+        <form action="https://www.freecodecamp.com/email-submit" method="post" id="form">
+            <div><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
+            <div><input id="submit" type="submit" value="VIP ME"></div>
+        </form>
+    </div>
+    <div class="video">
+        <iframe id="video" src="https://www.youtube.com/embed/Cok5u132PJs" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+    </div>
+</main>
+<footer>
+    <div>
+        <p>
+            Images ©2018 Fender Musical Instruments Corporation.
+            <br>
+            Used Under Fair Use Doctoring For Educational Purposes.
+        </p>
+    </div>
+</footer>
+
+<script>
+    function toggleNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+<script src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js"></script>
+</body>
+</html>
