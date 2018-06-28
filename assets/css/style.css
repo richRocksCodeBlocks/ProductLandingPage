@@ -264,13 +264,13 @@ header {
 @media screen and (min-width: 601px) {
     main {
         display: grid;
-        grid-template-columns: 1fr repeat(4, 200px) 1fr;
+        grid-template-columns: 1fr repeat(4, minmax(200px, 300px)) 1fr;
         grid-template-rows: repeat(5, auto);
         grid-template-areas:
                 "title title title title title title"
-                "image image image description description description"
-                "image image image features features features"
-                "image image image price price price"
+                ". image image description description ."
+                ". image image features features ."
+                ". image image price price ."
                 "vip vip vip video video video";
 
     }
